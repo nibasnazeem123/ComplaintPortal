@@ -16,7 +16,8 @@ namespace ComplaintPortal.BAL
         private string query;
         private string proUID;
         private string reply;
-        private string queid;
+        private int queid;
+        private int compid;
 
         public string replyuser
         {
@@ -24,7 +25,21 @@ namespace ComplaintPortal.BAL
             set { reply = value; }
         }
 
-        public string queID
+        public string creplyuser
+        {
+            get { return reply; }
+            set { reply = value; }
+        }
+        public int comid
+        {
+
+            get { return compid; }
+
+            set { compid = value; }
+        }
+
+
+        public int queID
         {
 
             get { return queid; }
@@ -104,6 +119,11 @@ namespace ComplaintPortal.BAL
         public int updatequeryreply()
         {
             return pda.updatereply(this);
+        }
+
+        public int updatecomplaintreply()
+        {
+            return pda.updatecompreply(this);
         }
     }
 }

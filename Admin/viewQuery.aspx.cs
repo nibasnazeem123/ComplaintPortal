@@ -17,35 +17,7 @@ namespace ComplaintPortal.Admin
             GridView1.DataBind();
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            GridView1.EditIndex = e.NewEditIndex;
-            GridView1.DataSource = prodba.viewQueryAdmin();
-            GridView1.DataBind();
-        }
-
-        protected void gridView_update(object sender, GridViewUpdateEventArgs e)
-        {
-
-            int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
-            string txt = TextBox1.Text;
-
-                //(TextBox)GridView1.Rows[e.RowIndex].Cells[0].Controls[0];
-            prodba.queID = id.ToString();
-            prodba.replyuser = txt.Text;
-            int i = prodba.updatequeryreply();
-            if (i == 1)
-            {
-                Response.Write("<script language=javascript>alert('PRODUCT ADDED');</script>");
-            }
-            else
-            {
-                Response.Write("<script language=javascript>alert('ERROR');</script>");
-            }
-            GridView1.EditIndex = -1;
-            GridView1.DataSource = prodba.viewQueryAdmin();
-            GridView1.DataBind();
-        }
+        
 
 
     }

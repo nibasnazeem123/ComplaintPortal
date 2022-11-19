@@ -66,7 +66,12 @@ namespace ComplaintPortal.DAL
             SqlCommand cmd = new SqlCommand(s, GetCon());
             return cmd.ExecuteNonQuery();
         }
-
+        public int updatecompreply(BAL.prodBAL obj)
+        {
+            string s = "update complaint set reply='" + obj.creplyuser + "' where compid='" + obj.comid + "'";
+            SqlCommand cmd = new SqlCommand(s, GetCon());
+            return cmd.ExecuteNonQuery();
+        }
 
 
         public DataTable viewusercomplaint(BAL.prodBAL obj)
@@ -81,7 +86,7 @@ namespace ComplaintPortal.DAL
 
         public DataTable viewAdmincomplaint()
         {
-            string s = "SELECT login.uname, product.prodname, complaint.date, complaint.complaint, complaint.reply, complaint.status FROM complaint INNER JOIN product ON complaint.prodid = product.prodid INNER JOIN login ON complaint.UID = login.UID ";
+            string s = "SELECT complaint.compid,login.uname, product.prodname, complaint.date, complaint.complaint, complaint.reply, complaint.status FROM complaint INNER JOIN product ON complaint.prodid = product.prodid INNER JOIN login ON complaint.UID = login.UID ";
             SqlCommand cmd = new SqlCommand(s, GetCon());
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

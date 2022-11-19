@@ -4,5 +4,5 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:TextBox ID="reply" runat="server" TextMode="MultiLine"></asp:TextBox>
-    <asp:Button ID="submit" runat="server" Text="Reply" />
+    <asp:Button ID="submit" runat="server" Text="Reply" OnClick="submit_Click" />
 </asp:Content>

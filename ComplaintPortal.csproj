@@ -69,8 +69,10 @@
   <ItemGroup>
     <Content Include="Admin\addpro.aspx" />
     <Content Include="Admin\adminhome.aspx" />
+    <Content Include="Admin\compreply.aspx" />
     <Content Include="Admin\confirm.aspx" />
     <Content Include="Admin\css\prod.css" />
+    <Content Include="Admin\queryreply.aspx" />
     <Content Include="Admin\viewComp.aspx" />
     <Content Include="Admin\viewQuery.aspx" />
     <Content Include="Guest\Login.aspx" />
@@ -104,12 +106,26 @@
     <Compile Include="Admin\adminhome.aspx.designer.cs">
       <DependentUpon>adminhome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\compreply.aspx.cs">
+      <DependentUpon>compreply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\compreply.aspx.designer.cs">
+      <DependentUpon>compreply.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\confirm.aspx.cs">
       <DependentUpon>confirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\confirm.aspx.designer.cs">
       <DependentUpon>confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\queryreply.aspx.cs">
+      <DependentUpon>queryreply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\queryreply.aspx.designer.cs">
+      <DependentUpon>queryreply.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\viewComp.aspx.cs">
       <DependentUpon>viewComp.aspx</DependentUpon>

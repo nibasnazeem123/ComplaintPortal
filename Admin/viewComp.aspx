@@ -3,14 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 align="center">View Complaints</h1>
-    <asp:GridView align="center" ID="GridView1" runat="server"  AutoGenerateColumns="False">
+    <asp:GridView align="center" ID="GridView1" runat="server"  DataKeyNames="compid" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="uname" HeaderText="User Name" ReadOnly="True" SortExpression="uname" />
             <asp:BoundField DataField="prodname" HeaderText="Product Name" ReadOnly="True" SortExpression="prodname" />
             <asp:BoundField DataField="date" HeaderText="Date" ReadOnly="True" SortExpression="date" />
             <asp:BoundField DataField="complaint" HeaderText="Complaints" ReadOnly="True" />
             <asp:BoundField DataField="reply" HeaderText="Reply" SortExpression="reply" />
-            <asp:CommandField ShowEditButton="True" ButtonType="Button" EditText="Reply" />
+             <asp:HyperLinkField HeaderText="Confirm" DataNavigateUrlFields="compid" DataNavigateUrlFormatString="compreply.aspx?ID={0}" Text="Reply" />
                                
         </Columns>
 
