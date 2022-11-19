@@ -20,17 +20,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataKeyNames="prodid" OnRowDeleting="GridView1_RowDeleting" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" >
-                            <Columns>
-                                <asp:TemplateField>
-                                     <ItemTemplate>
-                                        <input type="checkbox" runat="server" name="ch" value='<%Eval("Id") %>' />
-                                     </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:BoundField DataField="prodid" HeaderText="Product ID" />
-                                <asp:BoundField DataField="prodname" HeaderText="Product Name" />  
-                                <asp:CommandField HeaderText="" ShowDeleteButton="true" DeleteText="Delete" />
-                            </Columns>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" DataKeyNames="prodid" OnRowDeleting="GridView1_RowDeleting">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns>
+            <asp:BoundField DataField="prodname" HeaderText="Product Name" />
+            <asp:CommandField HeaderText="Edit" ShowEditButton="True" />
+            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
+        </Columns>
+        
+
                             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />

@@ -37,7 +37,27 @@ namespace ComplaintPortal.DAL
             return cmd1.ExecuteNonQuery();
 
         }
-
+        public int ProductEdit(BAL.prodBAL obj)
+        {
+            string qry = "update product set prodname= '" + obj.Name + "'where prodid='" + obj.ID + "'";
+            SqlCommand cmd = new SqlCommand(qry, GetCon());
+            return cmd.ExecuteNonQuery();
+        }
+        public int DeleteProduct(BAL.prodBAL obj)
+        {
+            string qry = "Delete from product where prodid = '" + obj.ID + "'";
+            SqlCommand cmd = new SqlCommand(qry, GetCon());
+            return cmd.ExecuteNonQuery();
+        }
+        public DataTable ViewProduct()
+        {
+            string s = "select * from product";
+            SqlCommand cmd = new SqlCommand(s, GetCon());
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public int Complaints(BAL.prodBAL obj)
         {
             string qry1 = "insert into complaint(prodid,complaint,status,date,UID) values('" + obj.ProdID + "','" + obj.Complaint + "',0,GETDATE(),'" + obj.UID + "')";

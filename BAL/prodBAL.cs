@@ -18,7 +18,30 @@ namespace ComplaintPortal.BAL
         private string reply;
         private int queid;
         private int compid;
-
+        private string _name;
+        private int _id;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
         public string replyuser
         {
             get { return reply; }
@@ -82,12 +105,22 @@ namespace ComplaintPortal.BAL
 
             set { query = value; }
         }
-
+        public DataTable viewProduct()
+        {
+            return pda.ViewProduct();
+        }
         public int ProdInsert()
         {
             return pda.ProdInsert(this);
        }
-
+        public int updateProduct()
+        {
+            return pda.ProductEdit(this);
+        }
+        public int deleteProduct()
+        {
+            return pda.DeleteProduct(this);
+        }
         public int ProdComp()
         {
             return pda.Complaints(this);
